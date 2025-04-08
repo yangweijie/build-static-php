@@ -12,9 +12,9 @@ __PROJECT__=$(
 cd ${__PROJECT__}
 
 
-PHP_VERSION='8.2.28'
-SWOOLE_VERSION='v6.0.2'
-X_PHP_VERSION='8.2'
+PHP_VERSION='7.4.33'
+SWOOLE_VERSION='v4.8.13'
+X_PHP_VERSION='7.4'
 
 while [ $# -gt 0 ]; do
   case "$1" in
@@ -32,10 +32,11 @@ while [ $# -gt 0 ]; do
   shift $(($# > 0 ? 1 : 0))
 done
 
-REDIS_VERSION=6.1.0
-MONGODB_VERSION=1.17.2
-YAML_VERSION=2.2.2
+REDIS_VERSION=6.2.0
+MONGODB_VERSION=1.20.1
+YAML_VERSION=2.2.4
 IMAGICK_VERSION=3.7.0
+XLSWRITER_VERSION=1.5.8
 
 mkdir -p pool/ext
 mkdir -p pool/lib
@@ -72,6 +73,7 @@ download_and_extract "redis" ${REDIS_VERSION}
 
 download_and_extract "yaml" ${YAML_VERSION}
 download_and_extract "imagick" ${IMAGICK_VERSION}
+download_and_extract "xlswriter" ${XLSWRITER_VERSION}
 
 cd ${__PROJECT__}/pool/ext
 if [ ! -f swoole-${SWOOLE_VERSION}.tgz ]; then
