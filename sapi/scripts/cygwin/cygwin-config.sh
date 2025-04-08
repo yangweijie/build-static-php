@@ -65,6 +65,7 @@ test -f Makefile && make clean
   --enable-posix \
   --enable-sockets \
   --enable-pdo \
+  --enable-ffi \
   --with-sqlite3 \
   --enable-phar \
   --enable-pcntl \
@@ -88,6 +89,7 @@ test -f Makefile && make clean
   --with-imagick \
   --with-yaml \
   --with-readline \
+  --with-xlswriter --enable-reader --with-zlib-dir=/usr \
   ${OPTIONS}
 
 #  --with-pdo-pgsql \
