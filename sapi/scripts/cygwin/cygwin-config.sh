@@ -40,6 +40,10 @@ mkdir -p ${__PROJECT__}/bin/
 WORK_TEMP_DIR=${__PROJECT__}/var/cygwin-build/
 cd ${WORK_TEMP_DIR}/php-src/
 
+if [ "$X_PHP_VERSION" = "7.4" ]; then
+  cp ext/phar/phar/phar.php ext/phar/phar/phar.phar
+fi
+
 # export CPPFLAGS="-I/usr/include"
 # export CFLAGS=""
 # export LDFLAGS="-L/usr/lib"
