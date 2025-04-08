@@ -120,4 +120,8 @@ if [ "$X_PHP_VERSION" = "8.4" ] || [ "$X_PHP_VERSION" = "8.3" ] || [ "$X_PHP_VER
   sed -i.backup 's/!defined(__HAIKU__)/!defined(__HAIKU__) \&\& !defined(__CYGWIN__)/' TSRM/TSRM.c
 fi
 
+if ["$X_PHP_VERSION" = "7.4"]; then
+  sed -i.backup '1329c\#if defined(SIGPOLL) && !defined(__CYGWIN__)' ext/pcntl/pcntl.c
+fi
+
 cd ${__PROJECT__}
